@@ -46,4 +46,4 @@ if __name__ == "__main__":
 rtn_col_list = readfitstable.read_table(args.filename,fields=args.col_list)
 
 #Pass the columns to be plotted
-Sdssplot.easy_hist(rtn_col_list, args.col_list)
+Sdssplots.easy_hist(rtn_col_list, args.col_list)
