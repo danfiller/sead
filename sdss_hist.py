@@ -1,19 +1,19 @@
 import sdssplot, readfitstable, argparse_example
-
-""" 
-	Plots histogram of column requested from filename
-	input
-	=================
-	filename: str
-	col_list: list
-"""
-
 # Standard library
 import sys
 import math
 from argparse import ArgumentParser
 import logging
 
+
+""" 
+	Plots histogram(s) of column(s) requested from filename
+	================
+	input parameters
+	=================
+	filename: str
+	col_list: list
+"""
 
 if __name__ == "__main__":
     # create logger
@@ -40,9 +40,10 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+print "Reading columns {0} from {1}".format(args.col_list,args.filename)
 
 #read out the required columns
-rtn_col_list = readfitstable(args.filename,args.col_list)
+#rtn_col_list = readfitstable(args.filename,args.col_list)
 
 #Pass the columns to be plotted
-sdssplot(rtn_col_list)
+#sdssplot(rtn_col_list)
