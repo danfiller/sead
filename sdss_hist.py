@@ -1,4 +1,4 @@
-import Sdssplot, readfitstable, argparse_example
+import Sdssplots, readfitstable, argparse_example
 # Standard library
 import sys
 import math
