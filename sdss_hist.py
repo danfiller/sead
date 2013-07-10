@@ -1,4 +1,4 @@
-import sdssplot, readfitstable, argparse_example
+import Sdssplot, readfitstable, argparse_example
 # Standard library
 import sys
 import math
@@ -46,4 +46,4 @@ if __name__ == "__main__":
 rtn_col_list = readfitstable.read_table(args.filename,fields=args.col_list)
 
 #Pass the columns to be plotted
-#sdssplot(rtn_col_list)
+Sdssplot.easy_hist(rtn_col_list, args.col_list)
