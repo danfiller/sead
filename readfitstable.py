@@ -3,8 +3,9 @@
 # Written by alex hagen (hagen@psu.edu) at scicoder 2013
 
 from astropy.io import fits
+import numpy as np
 
-def read_table(filenamepath,fields=['RV_ADOP'],extension_num=1,memmap=True,cleanup=(True,-9999)):
+def read_table(filenamepath,fields=['RV_ADOP','FEH_ADOP','DIST_ADOP'],extension_num=1,memmap=True,cleanup=(True,-9999)):
     """
     This will open the fits file located at filenamepath
     fields is a list containing the names of the columns
@@ -24,11 +25,16 @@ def read_table(filenamepath,fields=['RV_ADOP'],extension_num=1,memmap=True,clean
     print "Reading in the table data...Please be patient"
     tbdata = hdulist[extension_num].data #this is expensive
     output = []
-    for i fields:
+    for i in fields:
         output.append(tbdata.field(i))
     
     if cleanup[0]:
-        
+        b = np.ones_like(output[0]).astype(bool)
+        for i in output:
+            b &= i != -9999
+
+        for i,col in enumerate(output):
+            output[i] = col[b]
 
     return output
     
