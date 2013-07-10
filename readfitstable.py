@@ -29,12 +29,8 @@ def read_table(filenamepath,fields=['RV_ADOP','FEH_ADOP','DIST_ADOP'],extension_
         output.append(tbdata.field(i))
     
     if cleanup[0]:
-        b = np.ones_like(output[0]).astype(bool)
-        for i in output:
-            b &= i != -9999
-
         for i,col in enumerate(output):
-            output[i] = col[b]
+            output[i] = col[col != cleanup[1]]
 
     return output
     
