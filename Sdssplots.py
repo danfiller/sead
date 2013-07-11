@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 #from matplotlib.gridspec import GridSpec
 import matplotlib.pyplot as plt
-def easy_hist(data,col_names):
+def easy_hist(data,col_names, split_value):
     """ This is a function that will create plots for various types of data:
     
     Parameters
