@@ -14,8 +14,8 @@ def easy_hist(data,col_names):
     col_names: string list
     """
     length=len(col_names) #this determines the number of plots to be made
-    plt.subplots_adjust(hspace=.8)
-    plt.subplots_adjust(hspace=.8)
+    plt.subplots_adjust(hspace=1.1)
+    plt.subplots_adjust(hspace=1.1)
 
     for i in xrange(length):
         idx=131+i
