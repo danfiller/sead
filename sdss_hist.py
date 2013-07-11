@@ -42,7 +42,7 @@ if __name__ == "__main__":
                         help="List of columns")
     parser.add_argument("-galactic",  dest="gal_coords",action='store_true', default=False, required=False)
     parser.add_argument("-height",  dest="plot_height",action='store_true', default=False, required=False)
-    parser.add_argument("-split_Fe",  dest="split",type=float, required=False)
+    parser.add_argument("-split_Fe",  dest="split",type=float, default = -999., required=False)
                         
     args = parser.parse_args()
 
