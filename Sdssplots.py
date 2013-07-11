@@ -13,7 +13,7 @@ def easy_hist(data,col_names):
     data: list of float arrays
     col_names: string list
     """
-    length=size(data) #this determines the number of plots to be made
+    length=size(col_names) #this determines the number of plots to be made
     plt.subplots_adjust(hspace=.4)
     plt.subplots_adjust(hspace=.4)
 

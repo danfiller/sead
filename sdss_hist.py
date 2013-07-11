@@ -35,15 +35,15 @@ if __name__ == "__main__":
     # add a required, integer argument
     parser.add_argument("-file", dest="filename", required=True, type=str,
                         help="File to be read")
-    parser.add_argument("-list", dest="col_list", required=True, nargs="*",
+    parser.add_argument("-cols", dest="col_list", required=True, nargs="*",
                         help="List of columns")
 
     args = parser.parse_args()
 
 
 
-#read out the required columns
-rtn_col_list = readfitstable.read_table(args.filename,fields=args.col_list)
+    #read out the required columns
+    rtn_col_list = readfitstable.read_table(args.filename,fields=args.col_list)
 
-#Pass the columns to be plotted
-Sdssplots.easy_hist(rtn_col_list, args.col_list)
+    #Pass the columns to be plotted
+    Sdssplots.easy_hist(rtn_col_list, args.col_list)
