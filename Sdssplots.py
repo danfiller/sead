@@ -14,14 +14,16 @@ def easy_hist(data,col_names, split_value):
     data: list of float arrays
     col_names: string list
     """
+
+    
     length=len(col_names) #this determines the number of plots to be made
     plt.subplots_adjust(hspace=3.)
     plt.subplots_adjust(hspace=3.)
 
     metin= col_names.index("FEH_ADOP")
     metals=data[metin]
-    highmet=metals[(metals < split_value)]
-    lowmet=metals[(metals >= split_value)]        
+    highmet=metals[(metals > split_value)]
+    lowmet=metals[(metals <= split_value)]        
 
     for i in xrange(length):
         idx=101+10*length+i
