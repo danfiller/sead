@@ -35,7 +35,7 @@ if __name__ == "__main__":
     # add a required, integer argument
     parser.add_argument("-file", dest="filename", required=True, type=str,
                         help="File to be read")
-    parser.add_argument("-cols", dest="col_list", required=True, nargs="*",
+    parser.add_argument("-cols", dest="col_list", required=False, nargs="*",
                         help="List of columns")
 
     args = parser.parse_args()
