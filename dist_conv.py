@@ -29,4 +29,4 @@ def easy_con(l,b,d):
     y = d*np.sin(b)*np.sin(l)
     z = d*np.cos(b)
     glc_dist=np.sqrt((x**2)+(y**2)+(z**2))
-    return[glc_dist, x, y, z]
+    return[glc_dist.value, x.value, y.value, z.value]
