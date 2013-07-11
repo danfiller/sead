@@ -60,7 +60,7 @@ if __name__ == "__main__":
     rtn_col_list = readfitstable.read_table(args.filename,fields=args.col_list)
     
     if args.gal_coords == True:
-        g_distance, x_above, y_above, height_above_disc = dist_conv.easy_con(rtn_col_list[-3],rnt_col_list[-2],rtn_col_list[-1])
+        g_distance, x_above, y_above, height_above_disc = dist_conv.easy_con(rtn_col_list[-3],rtn_col_list[-2],rtn_col_list[-1])
         #Edit the list of arrays passed to plot fn
         rtn_col_list.remove(-2)  #remove "L" data
         rtn_col_list.remove(-3)  #remove "B" data
