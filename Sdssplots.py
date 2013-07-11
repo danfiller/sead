@@ -14,13 +14,14 @@ def easy_hist(data,col_names):
     col_names: string list
     """
     length=len(col_names) #this determines the number of plots to be made
-    plt.subplots_adjust(hspace=.4)
-    plt.subplots_adjust(hspace=.4)
+    plt.subplots_adjust(hspace=1.1)
+    plt.subplots_adjust(hspace=1.1)
 
     for i in xrange(length):
         idx=131+i
         plt.subplot(idx)            
         plt.title(col_names[i])
-        plt.hist(data[i])
+        plt.hist(data[i],log=True)
+	
     plt.savefig('test.png')
     plt.show()
