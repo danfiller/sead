@@ -81,4 +81,4 @@ if __name__ == "__main__":
    
 
     #Pass the columns to be plotted
-    Sdssplots.easy_hist(rtn_col_list, args.col_list, args.split = [-999.])
+    Sdssplots.easy_hist(rtn_col_list, args.col_list, args.split)
