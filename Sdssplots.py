@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 #from matplotlib.gridspec import GridSpec
 import matplotlib.pyplot as plt
+
 def easy_hist(data,col_names, split_value):
     """ This is a function that will create plots for various types of data:
     
@@ -14,14 +15,23 @@ def easy_hist(data,col_names, split_value):
     col_names: string list
     """
     length=len(col_names) #this determines the number of plots to be made
-    plt.subplots_adjust(hspace=1.1)
-    plt.subplots_adjust(hspace=1.1)
+    plt.subplots_adjust(hspace=3.)
+    plt.subplots_adjust(hspace=3.)
+
+    metin= col_names.index("FEH_ADOP")
+    metals=data[metin]
+    highmet=metals[(metals < split_value)]
+    lowmet=metals[(metals >= split_value)]        
 
     for i in xrange(length):
         idx=101+10*length+i
         plt.subplot(idx)            
         plt.title(col_names[i])
-        plt.hist(data[i],log=True)
+        if i == metin:
+	   plt.hist(highmet,log=True)
+	   plt.hist(lowmet,log=True,color='red')   
+	else
+	   plt.hist(data[i],log=True)
 	
     plt.savefig('test.png')
     plt.show()
