@@ -18,7 +18,7 @@ def easy_hist(data,col_names):
     plt.subplots_adjust(hspace=1.1)
 
     for i in xrange(length):
-        idx=131+i
+        idx=101+10*length+i
         plt.subplot(idx)            
         plt.title(col_names[i])
         plt.hist(data[i],log=True)
