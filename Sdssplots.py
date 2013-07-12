@@ -37,7 +37,7 @@ def easy_hist(data,col_names, split_value):
         if i == metin:
 	   plt.hist(highmet,log=True)
 	   if len(lowmet) >= 1: 
-	      plt.hist(lowmet,log=True,color="orchid"
+	      plt.hist(lowmet,log=True,color="orchid")
 	      print "Plotting the red one ..."
    	plt.hist(data[i],log=True)
 	
