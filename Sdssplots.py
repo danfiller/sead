@@ -33,7 +33,7 @@ def easy_hist(data,col_names, split_value):
     except:
 	print 'oops, not plotting metallicity'
 
-    font = {'family' : 'normal', 'size'   : 12}
+    font = {'size'   : 12}
 
     matplotlib.rc('font', **font)
 
