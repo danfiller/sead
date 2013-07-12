@@ -12,10 +12,11 @@ from argparse import ArgumentParser
 	================
 	input parameters
 	=================
-	filename: complete file path
-	col_list: columns not separated by commmas
-	flag: -galactic if galactic coords needed
-	flag: -height is plotted
+	required flag: -file  full file path
+	required flag: -cols  columns not separated by commmas
+	optional flag: -galactic if galactic coords needed
+	optional flag: -height
+	optional flag: -split_Fe provide a float value to split on
 """
 
 if __name__ == "__main__":
@@ -63,8 +64,8 @@ if __name__ == "__main__":
     if args.gal_coords == True:
         g_distance, x_above, y_above, height_above_disc = dist_conv.easy_con(rtn_col_list[-3],rtn_col_list[-2],rtn_col_list[-1])
         #Edit the list of arrays passed to plot fn
+        rtn_col_list.pop(-2)  #remove "L" data
         rtn_col_list.pop(-2)  #remove "B" data
-        rtn_col_list.pop(-3)  #remove "L" data
         rtn_col_list.pop(-1)  #remove "DIST_ADOP" data
         rtn_col_list.append(g_distance)  
         #Edit the list of columns

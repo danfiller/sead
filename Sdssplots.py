@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 #from matplotlib.gridspec import GridSpec
 import matplotlib.pyplot as plt
+import matplotlib
 
 def easy_hist(data,col_names, split_value):
     """ This is a function that will create plots for various types of data:
@@ -17,23 +18,40 @@ def easy_hist(data,col_names, split_value):
 
     
     length=len(col_names) #this determines the number of plots to be made
-    plt.subplots_adjust(hspace=3.)
-    plt.subplots_adjust(hspace=3.)
+    plt.subplots_adjust(hspace=10.)
+    plt.subplots_adjust(wspace=3.)
+    
 
-    metin= col_names.index("FEH_ADOP")
-    metals=data[metin]
-    highmet=metals[(metals > split_value)]
-    lowmet=metals[(metals <= split_value)]        
+    try:
+	metin = col_names.index("FEH_ADOP")
+    	metals=data[metin]
+    	print split_value
+        print "metals max:",str(np.max(metals))
+        print "metals min:",str(np.min(metals))
+	highmet=metals[metals > split_value]
+    	lowmet=metals[metals <= split_value]        
+    except:
+	print 'oops, not plotting metallicity'
+
+    font = {'size'   : 8}
+
+    matplotlib.rc('font', **font)
 
     for i in xrange(length):
         idx=101+10*length+i
         plt.subplot(idx)            
         plt.title(col_names[i])
-        if i == metin:
+       	plt.locator_params(tight=True, nbins=4)
+	if i == metin:
+           print "in metin if statement" 
 	   plt.hist(highmet,log=True)
-	   plt.hist(lowmet,log=True,color='red')   
-	else
-	   plt.hist(data[i],log=True)
+           print "lowmet length is:",len(lowmet), "size is", str(lowmet.size)
+	   if len(lowmet) >= 1: 
+              print "in lowmet if statement" 
+	      plt.hist(lowmet,log=True,alpha=0.5,color="orchid")
+	      print "Plotting the red one ..."
+   	else:
+		plt.hist(data[i],log=True)
 	
     plt.savefig('test.png')
     plt.show()
