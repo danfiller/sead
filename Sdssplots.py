@@ -19,11 +19,11 @@ def easy_hist(data,col_names, split_value):
     
     length=len(col_names) #this determines the number of plots to be made
     plt.subplots_adjust(hspace=10.)
-    plt.subplots_adjust(hspace=10.)
+    plt.subplots_adjust(wspace=3.)
     
 
     try:
-	metin= col_names.index("FEH_ADOP")
+	metin = col_names.index("FEH_ADOP")
     	metals=data[metin]
     	print split_value
         print "metals max:",str(np.max(metals))
