@@ -23,7 +23,8 @@ def easy_hist(data,col_names, split_value):
     try:
 	metin= col_names.index("FEH_ADOP")
     	metals=data[metin]
-    	highmet=metals[(metals > split_value)]
+    	print split_value
+	highmet=metals[(metals > split_value)]
     	lowmet=metals[(metals <= split_value)]        
     except:
 	print 'oops, not plotting metallicity'
