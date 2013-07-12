@@ -12,10 +12,11 @@ from argparse import ArgumentParser
 	================
 	input parameters
 	=================
-	filename: complete file path
-	col_list: columns not separated by commmas
-	flag: -galactic if galactic coords needed
-	flag: -height is plotted
+	required flag: -file  full file path
+	required flag: -cols  columns not separated by commmas
+	optional flag: -galactic if galactic coords needed
+	optional flag: -height
+	optional flag: -split_Fe provide a float value to split on
 """
 
 if __name__ == "__main__":
