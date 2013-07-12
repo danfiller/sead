@@ -37,7 +37,7 @@ def easy_hist(data,col_names, split_value):
 	   plt.hist(highmet,log=True)
 	   if len(lowmet) >= 1: 
 	      plt.hist(lowmet,log=True,color='red')   
-	else
+	else:
 	   plt.hist(data[i],log=True)
 	
     plt.savefig('test.png')
