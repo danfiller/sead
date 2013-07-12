@@ -66,12 +66,12 @@ if __name__ == "__main__":
         #Edit the list of arrays passed to plot fn
         rtn_col_list.pop(-2)  #remove "B" data
         rtn_col_list.pop(-3)  #remove "L" data
-        rtn_col_list.pop(-1)  #remove "DIST_ADOP" data
+        #rtn_col_list.pop(-1)  #remove "DIST_ADOP" data
         rtn_col_list.append(g_distance)  
         #Edit the list of columns
         args.col_list.remove("L")  
         args.col_list.remove("B")  
-        args.col_list.remove("DIST_ADOP")  
+        #args.col_list.remove("DIST_ADOP")  
         args.col_list.append("Galactic distance")
         #plot hight above disc
         if args.plot_height == True:
