@@ -37,6 +37,7 @@ def easy_hist(data,col_names, split_value):
         if i == metin:
            print "in metin if statement" 
 	   plt.hist(highmet,log=True)
+           print "lowment length is:",len(lowmet)
 	   if len(lowmet) >= 1: 
               print "in lowmet if statement" 
 	      plt.hist(lowmet,log=True,color="orchid")
