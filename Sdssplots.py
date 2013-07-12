@@ -32,7 +32,7 @@ def easy_hist(data,col_names, split_value):
         if i == metin:
 	   plt.hist(highmet,log=True)
 	   plt.hist(lowmet,log=True,color='red')   
-	else
+	else:
 	   plt.hist(data[i],log=True)
 	
     plt.savefig('test.png')
