@@ -41,14 +41,13 @@ def easy_hist(data,col_names, split_value):
         idx=101+10*length+i
         plt.subplot(idx)            
         plt.title(col_names[i])
-        plt.tick_params(axis='x', length=4)
-	if i == metin:
+       	if i == metin:
            print "in metin if statement" 
 	   plt.hist(highmet,log=True)
            print "lowmet length is:",len(lowmet), "size is", str(lowmet.size)
 	   if len(lowmet) >= 1: 
               print "in lowmet if statement" 
-	      plt.hist(lowmet,log=True,color="orchid")
+	      plt.hist(lowmet,log=True,alpha=0.5,color="orchid")
 	      print "Plotting the red one ..."
    	else:
 		plt.hist(data[i],log=True)
