@@ -41,7 +41,8 @@ def easy_hist(data,col_names, split_value):
         idx=101+10*length+i
         plt.subplot(idx)            
         plt.title(col_names[i])
-       	if i == metin:
+       	plt.locator_params(tight=True, nbins=4)
+	if i == metin:
            print "in metin if statement" 
 	   plt.hist(highmet,log=True)
            print "lowmet length is:",len(lowmet), "size is", str(lowmet.size)
