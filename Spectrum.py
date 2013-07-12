@@ -26,7 +26,7 @@ data_dict=json.load(response)
 
 #Now we are going to pull spectra for the elements in the downloaded list
 spectra=[]
-for line in data_dict[0:4]: #This has been truncated. 
+for line in data_dict: #This has been truncated. 
     spectrum_url='http://api.sdss3.org/spectrum?id='+line+'&format=json'
     spectrum_file=urllib2.urlopen(spectrum_url)
     spectrum=json.load(spectrum_file)
