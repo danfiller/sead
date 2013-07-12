@@ -20,10 +20,14 @@ def easy_hist(data,col_names, split_value):
     plt.subplots_adjust(hspace=3.)
     plt.subplots_adjust(hspace=3.)
 
-    metin= col_names.index("FEH_ADOP")
-    metals=data[metin]
-    highmet=metals[(metals > split_value)]
-    lowmet=metals[(metals <= split_value)]        
+    try:
+	metin= col_names.index("FEH_ADOP")
+    	metals=data[metin]
+    	highmet=metals[(metals > split_value)]
+    	lowmet=metals[(metals <= split_value)]        
+    except:
+	print 'oops, not plotting metallicity'
+
 
     for i in xrange(length):
         idx=101+10*length+i
@@ -31,8 +35,9 @@ def easy_hist(data,col_names, split_value):
         plt.title(col_names[i])
         if i == metin:
 	   plt.hist(highmet,log=True)
-	   plt.hist(lowmet,log=True,color='red')   
-	else:
+	   if len(lowmet) >= 1: 
+	      plt.hist(lowmet,log=True,color='red')   
+	else
 	   plt.hist(data[i],log=True)
 	
     plt.savefig('test.png')
