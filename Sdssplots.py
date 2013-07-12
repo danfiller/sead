@@ -41,7 +41,8 @@ def easy_hist(data,col_names, split_value):
               print "in lowmet if statement" 
 	      plt.hist(lowmet,log=True,color="orchid")
 	      print "Plotting the red one ..."
-   	plt.hist(data[i],log=True)
+   	else:
+		plt.hist(data[i],log=True)
 	
     plt.savefig('test.png')
     plt.show()
