@@ -17,8 +17,8 @@ def easy_hist(data,col_names, split_value):
 
     
     length=len(col_names) #this determines the number of plots to be made
-    plt.subplots_adjust(hspace=3.)
-    plt.subplots_adjust(hspace=3.)
+    plt.subplots_adjust(hspace=10.)
+    plt.subplots_adjust(hspace=10.)
 
     try:
 	metin= col_names.index("FEH_ADOP")
@@ -36,9 +36,10 @@ def easy_hist(data,col_names, split_value):
         if i == metin:
 	   plt.hist(highmet,log=True)
 	   if len(lowmet) >= 1: 
-	      plt.hist(lowmet,log=True,color='red')   
-	else:
-	   plt.hist(data[i],log=True)
+	      plt.hist(lowmet,log=True,color='red')
+	      print "Plotting the red one ..."
+	   else:
+		plt.hist(data[i],log=True)
 	
     plt.savefig('test.png')
     plt.show()
