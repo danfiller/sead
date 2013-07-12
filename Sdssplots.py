@@ -19,6 +19,7 @@ def easy_hist(data,col_names, split_value):
     length=len(col_names) #this determines the number of plots to be made
     plt.subplots_adjust(hspace=10.)
     plt.subplots_adjust(hspace=10.)
+    
 
     try:
 	metin= col_names.index("FEH_ADOP")
@@ -31,6 +32,9 @@ def easy_hist(data,col_names, split_value):
     except:
 	print 'oops, not plotting metallicity'
 
+    font = {'family' : 'normal', 'size'   : 12}
+
+    matplotlib.rc('font', **font)
 
     for i in xrange(length):
         idx=101+10*length+i
