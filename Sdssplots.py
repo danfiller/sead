@@ -24,8 +24,10 @@ def easy_hist(data,col_names, split_value):
 	metin= col_names.index("FEH_ADOP")
     	metals=data[metin]
     	print split_value
-	highmet=metals[(metals > split_value)]
-    	lowmet=metals[(metals <= split_value)]        
+        print "metals max:",str(np.max(metals))
+        print "metals min:",str(np.min(metals))
+	highmet=metals[metals > split_value]
+    	lowmet=metals[metals <= split_value]        
     except:
 	print 'oops, not plotting metallicity'
 
@@ -37,7 +39,7 @@ def easy_hist(data,col_names, split_value):
         if i == metin:
            print "in metin if statement" 
 	   plt.hist(highmet,log=True)
-           print "lowment length is:",len(lowmet)
+           print "lowmet length is:",len(lowmet), "size is", str(lowmet.size)
 	   if len(lowmet) >= 1: 
               print "in lowmet if statement" 
 	      plt.hist(lowmet,log=True,color="orchid")
